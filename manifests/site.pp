@@ -56,8 +56,9 @@ node default {
   include dnsmasq
   include git
   include hub
-  include nginx
-  include tmux
+  # include nginx
+  include mysql
+  include postgresql
 
   # fail if FDE is not enabled
   if $::root_encrypted == 'no' {
