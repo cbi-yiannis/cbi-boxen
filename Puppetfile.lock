@@ -49,11 +49,6 @@ GITHUBTARBALL
     mysql (2.2.2)
 
 GITHUBTARBALL
-  remote: boxen/puppet-nginx
-  specs:
-    nginx (1.6.0)
-
-GITHUBTARBALL
   remote: boxen/puppet-nodejs
   specs:
     nodejs (5.0.0)
@@ -151,7 +146,6 @@ DEPENDENCIES
   inifile (= 1.4.1)
   module_data (= 0.0.4)
   mysql (= 2.2.2)
-  nginx (= 1.6.0)
   nodejs (= 5.0.0)
   openssl (= 1.0.0)
   phantomjs (= 3.0.0)
