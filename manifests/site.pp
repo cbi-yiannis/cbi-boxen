@@ -59,6 +59,7 @@ node default {
   # include nginx
   include mysql
   include postgresql
+  include tmux
 
   # fail if FDE is not enabled
   if $::root_encrypted == 'no' {
