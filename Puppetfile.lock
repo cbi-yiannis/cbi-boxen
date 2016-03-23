@@ -99,6 +99,11 @@ GITHUBTARBALL
     sysctl (1.0.1)
 
 GITHUBTARBALL
+  remote: boxen/puppet-tmux
+  specs:
+    tmux (1.0.2)
+
+GITHUBTARBALL
   remote: boxen/puppet-vim
   specs:
     vim (1.0.5)
@@ -152,6 +157,7 @@ DEPENDENCIES
   stdlib (= 4.7.0)
   sudo (= 1.0.0)
   sysctl (= 1.0.1)
+  tmux (= 1.0.2)
   vim (>= 0)
   wget (>= 0)
   xquartz (= 1.2.1)
