@@ -1,7 +1,7 @@
 GITHUBTARBALL
   remote: boxen/puppet-boxen
   specs:
-    boxen (3.11.0)
+    boxen (3.11.1)
 
 GITHUBTARBALL
   remote: boxen/puppet-brewcask
@@ -44,9 +44,14 @@ GITHUBTARBALL
     hub (1.4.1)
 
 GITHUBTARBALL
-  remote: boxen/puppet-nginx
+  remote: boxen/puppet-imagemagick
   specs:
-    nginx (1.4.6)
+    imagemagick (1.3.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-mysql
+  specs:
+    mysql (2.2.2)
 
 GITHUBTARBALL
   remote: boxen/puppet-nodejs
@@ -69,6 +74,21 @@ GITHUBTARBALL
     pkgconfig (1.0.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-postgresql
+  specs:
+    postgresql (4.1.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-qt
+  specs:
+    qt (1.4.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-redis
+  specs:
+    redis (4.0.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-repository
   specs:
     repository (2.4.1)
@@ -76,12 +96,27 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-ruby
   specs:
-    ruby (8.5.2)
+    ruby (8.5.4)
 
 GITHUBTARBALL
   remote: boxen/puppet-sudo
   specs:
     sudo (1.0.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-sysctl
+  specs:
+    sysctl (1.0.1)
+
+GITHUBTARBALL
+  remote: boxen/puppet-tmux
+  specs:
+    tmux (1.0.2)
+
+GITHUBTARBALL
+  remote: boxen/puppet-wget
+  specs:
+    wget (1.0.1)
 
 GITHUBTARBALL
   remote: boxen/puppet-xquartz
@@ -104,7 +139,7 @@ GITHUBTARBALL
     module_data (0.0.4)
 
 DEPENDENCIES
-  boxen (= 3.11.0)
+  boxen (= 3.11.1)
   brewcask (= 0.0.6)
   dnsmasq (= 2.0.1)
   foreman (= 1.2.0)
@@ -113,16 +148,23 @@ DEPENDENCIES
   go (= 2.1.0)
   homebrew (= 1.13.0)
   hub (= 1.4.1)
+  imagemagick (= 1.3.0)
   inifile (= 1.4.1)
   module_data (= 0.0.4)
-  nginx (= 1.4.6)
+  mysql (= 2.2.2)
   nodejs (= 5.0.0)
   openssl (= 1.0.0)
   phantomjs (= 3.0.0)
   pkgconfig (= 1.0.0)
+  postgresql (= 4.1.0)
+  qt (= 1.4.0)
+  redis (= 4.0.0)
   repository (= 2.4.1)
-  ruby (= 8.5.2)
+  ruby (= 8.5.4)
   stdlib (= 4.7.0)
   sudo (= 1.0.0)
+  sysctl (= 1.0.1)
+  tmux (= 1.0.2)
+  wget (= 1.0.1)
   xquartz (= 1.2.1)
 
