@@ -97,19 +97,19 @@ class people::yskarpathiotis { # Change to your GitHub username
     ]
   }
 
-  file { "${path}/.dotfiles/.vimrc":
+  file { "${path}/.vimrc":
     ensure => link,
-    target => "${path}/.vimrc"
+    target => "${path}/.dotfiles/.vimrc"
   }
 
-  file { "${path}/.dotfiles/.tmux.conf":
+  file { "${path}/.tmux.conf":
     ensure => link,
-    target => "${path}/.tmux.conf"
+    target => "${path}/.dotfiles/.tmux.conf"
   }
 
-  file { "${path}/.dotfiles/.zshrc":
+  file { "${path}/.zshrc":
     ensure => link,
-    target => "${path}/.zshrc"
+    target => "${path}/.dotfiles/.zshrc"
   }
 
   #### SOLARYAN ####
@@ -122,9 +122,9 @@ class people::yskarpathiotis { # Change to your GitHub username
     require => File["${path}/Code"]
   }
 
-  file { "${path}/Code/oh-my-zsh-solaryan-theme/solaryan.zsh-theme":
+  file { "${path}/.oh-my-zsh/custom/themes/solaryan.zsh-theme":
     ensure  => link,
-    target  => "${path}/.oh-my-zsh/custom/themes/solaryan.zsh-theme",
+    target  => "${path}/Code/oh-my-zsh-solaryan-theme/solaryan.zsh-theme",
     require =>  Exec['clone solar-yan']
   }
 
@@ -138,9 +138,9 @@ class people::yskarpathiotis { # Change to your GitHub username
     require => File["${path}/Code"]
   }
 
-  file { "${path}/Code/rdir":
+  file { "${path}/.oh-my-zsh/custom/plugins/rdir":
     ensure => link,
-    target => "${path}/.oh-my-zsh/custom/plugins/rdir",
+    target => "${path}/Code/rdir",
     require =>  Exec['clone rdir']
   }
 
