@@ -25,7 +25,7 @@ class people::yskarpathiotis { # Change to your GitHub username
 
   #### SETUP CODE DIR ####
   notify { "setup Code dir": }
-  file { '${path}/Code':
+  file { "${path}/Code":
     ensure => 'directory'
   }
   
