@@ -15,12 +15,14 @@ class people::yskarpathiotis { # Change to your GitHub username
 
   notify { "install reattach-to-user-namespace": }
   package { 'reattach-to-user-namespace':
-    ensure => present
+    ensure => present,
+    require => Package['install rbenv-gemset']
   }
 
   notify { "install qt55": }
   package { 'qt55':
-    ensure => present
+    ensure => present,
+    require => Package['install rbenv-gemset']
   }
 
   #### SETUP CODE DIR ####
