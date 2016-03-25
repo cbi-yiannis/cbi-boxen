@@ -92,8 +92,8 @@ class people::yskarpathiotis { # Change to your GitHub username
     path    => ["/usr/bin", "/usr/sbin"],
     before  => [
       File["${path}/.dotfiles/.vimrc"],
-      File["${path}/dotfiles/.tmux.conf"],
-      File["${path}/dotfiles/.zshrc"]
+      File["${path}/.dotfiles/.tmux.conf"],
+      File["${path}/.dotfiles/.zshrc"]
     ]
   }
 
@@ -102,12 +102,12 @@ class people::yskarpathiotis { # Change to your GitHub username
     target => "${path}/.vimrc"
   }
 
-  file { "${path}/dotfiles/.tmux.conf":
+  file { "${path}/.dotfiles/.tmux.conf":
     ensure => link,
     target => "${path}/.tmux.conf"
   }
 
-  file { "${path}/dotfiles/.zshrc":
+  file { "${path}/.dotfiles/.zshrc":
     ensure => link,
     target => "${path}/.zshrc"
   }
