@@ -116,7 +116,7 @@ class people::yskarpathiotis { # Change to your GitHub username
   exec { "clone solar-yan":
     command => "git clone https://github.com/yskarpathiotis/oh-my-zsh-solaryan-theme.git",
     cwd     => "${path}/Code",
-    creates => "${path}/Code/oh-my-zsh-solaryan",
+    creates => "${path}/Code/oh-my-zsh-solaryan-theme",
     path    => '/bin:/sbin:/usr/bin:/usr/sbin',
     require => File["${path}/Code"]
   }
