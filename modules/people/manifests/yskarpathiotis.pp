@@ -19,12 +19,6 @@ class people::yskarpathiotis { # Change to your GitHub username
     require => Package['rbenv-gemset']
   }
 
-  # notify { "install qt55": }
-  # package { 'qt55':
-  #   ensure => present,
-  #   require => Package['install rbenv-gemset']
-  # }
-
   #### SETUP CODE DIR ####
   notify { "setup Code dir": }
   file { "${path}/Code":
@@ -51,26 +45,27 @@ class people::yskarpathiotis { # Change to your GitHub username
 
   #### VUNDLE ####
   notify { "install Vundle": }
-  exec { "git clone https://github.com/VundleVim/Vundle.vim.git ${path}/.vim/bundle/Vundle.vim":
+  exec { "install Vundle":
+    command => "git clone https://github.com/VundleVim/Vundle.vim.git ${path}/.vim/bundle/Vundle.vim"
     cwd     => $path,
     creates => "${path}/.vim/bundle/Vundle.vim",
-    path    => ["/usr/bin", "/usr/sbin"]
+    path    => '/bin:/sbin:/usr/bin:/usr/sbin'
   }
 
   #### SETUP ZSH ####
   notify { "install oh-my-zsh": }
   exec { "install oh-my-zsh":
-    command => "curl -L http://install.ohmyz.sh | bash",
+    command => 'curl -L http://install.ohmyz.sh | sh',
     cwd     => $path,
     creates => "${path}/.oh-my-zsh",
-    path    => ["/usr/bin", "/usr/sbin"]
+    path    => '/bin:/sbin:/usr/bin:/usr/sbin'
   }
 
   notify { "move .zshrc": }
   exec { "mv .zshrc .zshrc_original":
     cwd     => $path,
     creates => "${path}/.vim/bundle/Vundle.vim",
-    path    => ["/usr/bin", "/usr/sbin"],
+    path    => '/bin:/sbin:/usr/bin:/usr/sbin',
     require => Exec['install oh-my-zsh']
   }
 
@@ -88,10 +83,11 @@ class people::yskarpathiotis { # Change to your GitHub username
 
   #### .dotfiles ####
   notify { "download dotfiles": }
-  exec { "git clone https://github.com/yskarpathiotis/dotfiles.git ${path}/.dotfiles":
+  exec { "download dotfiles":
+    command => "git clone https://github.com/yskarpathiotis/dotfiles.git ${path}/.dotfiles",
     cwd     => $path,
     creates => "${path}/.vim/bundle/Vundle.vim",
-    path    => ["/usr/bin", "/usr/sbin"],
+    path    => '/bin:/sbin:/usr/bin:/usr/sbin',
     before  => [
       File["${path}/.vimrc"],
       File["${path}/.tmux.conf"],
@@ -120,7 +116,7 @@ class people::yskarpathiotis { # Change to your GitHub username
     command => "git clone https://github.com/yskarpathiotis/oh-my-zsh-solaryan-theme.git",
     cwd     => "${path}/Code",
     creates => "${path}/Code/oh-my-zsh-solaryan",
-    path    => ["/usr/bin", "/usr/sbin"],
+    path    => '/bin:/sbin:/usr/bin:/usr/sbin',
     require => File["${path}/Code"]
   }
 
@@ -136,7 +132,7 @@ class people::yskarpathiotis { # Change to your GitHub username
     command => "git clone https://github.com/yskarpathiotis/rdir.git",
     cwd     => "${path}/Code",
     creates => "${path}/Code/rdir",
-    path    => ["/usr/bin", "/usr/sbin"],
+    path    => '/bin:/sbin:/usr/bin:/usr/sbin',
     require => File["${path}/Code"]
   }
 
