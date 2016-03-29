@@ -46,7 +46,7 @@ class people::yskarpathiotis { # Change to your GitHub username
   #### VUNDLE ####
   notify { "install Vundle": }
   exec { "install Vundle":
-    command => "git clone https://github.com/VundleVim/Vundle.vim.git ${path}/.vim/bundle/Vundle.vim"
+    command => "git clone https://github.com/VundleVim/Vundle.vim.git ${path}/.vim/bundle/Vundle.vim",
     cwd     => $path,
     creates => "${path}/.vim/bundle/Vundle.vim",
     path    => '/bin:/sbin:/usr/bin:/usr/sbin'
