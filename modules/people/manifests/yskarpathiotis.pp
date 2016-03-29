@@ -58,7 +58,8 @@ class people::yskarpathiotis { # Change to your GitHub username
     command => 'curl -L http://install.ohmyz.sh | sh',
     cwd     => $path,
     creates => "${path}/.oh-my-zsh",
-    path    => '/bin:/sbin:/usr/bin:/usr/sbin'
+    path    => '/bin:/sbin:/usr/bin:/usr/sbin',
+    user    => "${::boxen_user}"
   }
 
   notify { "move .zshrc": }
@@ -86,7 +87,7 @@ class people::yskarpathiotis { # Change to your GitHub username
   exec { "download dotfiles":
     command => "git clone https://github.com/yskarpathiotis/dotfiles.git ${path}/.dotfiles",
     cwd     => $path,
-    creates => "${path}/.vim/bundle/Vundle.vim",
+    creates => "${path}/.dotfiles",
     path    => '/bin:/sbin:/usr/bin:/usr/sbin',
     before  => [
       File["${path}/.vimrc"],
