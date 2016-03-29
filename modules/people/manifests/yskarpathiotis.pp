@@ -143,4 +143,15 @@ class people::yskarpathiotis { # Change to your GitHub username
     require =>  Exec['clone rdir']
   }
 
+  notify { "install vundle plugins": }
+  exec { "install vundle plugins":
+    command => "vim +PluginInstall +qall",
+    cwd     => "${path}/Code",
+    path    => '/bin:/sbin:/usr/bin:/usr/sbin',
+    require => [
+      File["${path}/.vimrc"], 
+      Exec["install Vundle"]
+    ]
+  }
+
 }
