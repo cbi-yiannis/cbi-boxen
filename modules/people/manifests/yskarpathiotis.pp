@@ -19,11 +19,11 @@ class people::yskarpathiotis { # Change to your GitHub username
     require => Package['install rbenv-gemset']
   }
 
-  notify { "install qt55": }
-  package { 'qt55':
-    ensure => present,
-    require => Package['install rbenv-gemset']
-  }
+  # notify { "install qt55": }
+  # package { 'qt55':
+  #   ensure => present,
+  #   require => Package['install rbenv-gemset']
+  # }
 
   #### SETUP CODE DIR ####
   notify { "setup Code dir": }
@@ -60,7 +60,7 @@ class people::yskarpathiotis { # Change to your GitHub username
   #### SETUP ZSH ####
   notify { "install oh-my-zsh": }
   exec { "install oh-my-zsh":
-    command => "curl -L http://install.ohmyz.sh | sh",
+    command => "curl -L http://install.ohmyz.sh | bash",
     cwd     => $path,
     creates => "${path}/.oh-my-zsh",
     path    => ["/usr/bin", "/usr/sbin"]
@@ -93,9 +93,9 @@ class people::yskarpathiotis { # Change to your GitHub username
     creates => "${path}/.vim/bundle/Vundle.vim",
     path    => ["/usr/bin", "/usr/sbin"],
     before  => [
-      File["${path}/.dotfiles/.vimrc"],
-      File["${path}/.dotfiles/.tmux.conf"],
-      File["${path}/.dotfiles/.zshrc"]
+      File["${path}/.vimrc"],
+      File["${path}/.tmux.conf"],
+      File["${path}/.zshrc"]
     ]
   }
 
