@@ -5,13 +5,13 @@ class people::yskarpathiotis { # Change to your GitHub username
   $path = "/Users/${::boxen_user}"
 
   #### HOMEBREW INSTALLS ####
-  notify { "install rbenv-gemset": }
-  package { 'rbenv-gemset':
-    ensure => present,
-    install_options => [
-      '--with-fpm'
-    ]
-  }
+  # notify { "install rbenv-gemset": }
+  # package { 'rbenv-gemset':
+  #   ensure => present,
+  #   install_options => [
+  #     '--with-fpm'
+  #   ]
+  # }
 
   notify { "install reattach-to-user-namespace": }
   package { 'reattach-to-user-namespace':
