@@ -15,8 +15,8 @@ class people::yskarpathiotis { # Change to your GitHub username
 
   notify { "install reattach-to-user-namespace": }
   package { 'reattach-to-user-namespace':
-    ensure => present,
-    require => Package['rbenv-gemset']
+    ensure => present # ,
+    # require => Package['rbenv-gemset']
   }
 
   #### SETUP CODE DIR ####
