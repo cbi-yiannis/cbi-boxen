@@ -61,7 +61,7 @@ node default {
   include mysql
   include postgresql
   include tmux
-  include imagemagick
+  # include imagemagick
 
   # fail if FDE is not enabled
   if $::root_encrypted == 'no' {
